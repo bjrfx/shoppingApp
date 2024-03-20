@@ -1,14 +1,15 @@
-import { Box, Grid } from "@mui/material";
-import ItemNames from "./components/ItemNames.component";
-
+import Home from './routes/home/home.component';
+import {Routes, Route} from 'react-router-dom';
+import TitleShop from './components/TitleShop.component';
+import Appbar from './components/AppBar.component';
 function App() {
   return (
-    <Box>
-      {/* For small (sm) screens, show 2 items */}
-      <Grid container spacing={2}>
-         <ItemNames />
-      </Grid>
-    </Box>
+    <Routes>
+      <Route path='/' element={<Appbar />}>
+      <Route index element={<Home />} />
+      <Route path='title' element={<TitleShop />}/>
+      </Route>
+    </Routes>
   );
 }
 
